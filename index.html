@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Сделай себя сам — Legenda®</title>
+  <meta name="description" content="Legenda® — место, где вы находите поддержку, мотивацию и путь к лучшей версии себя. Ташкент, ул. Махтумкули, 79." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Roboto+Flex:opsz,wght@8..144,500..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header" id="header">
+      <a class="header__logo" href="#top">
+        <img
+          src="assets/legenda-logo-white.png"
+          alt="Legenda"
+          width="200"
+          height="46"
+          decoding="async"
+        />
+      </a>
+      <button class="burger" type="button" aria-label="Меню" id="menuBtn">
+        <img src="assets/burger.svg" alt="" width="22" height="16" />
+      </button>
+    </header>
+
+    <nav class="drawer" id="drawer" hidden>
+      <a href="#why">Почему мы</a>
+      <a href="#activities">Направления</a>
+      <a href="#plans">Клубные карты</a>
+      <a href="#about">О клубе</a>
+      <a href="#contact">Контакты</a>
+      <a href="https://t.me/legendafitness" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="drawer__call" href="tel:+998785557555">Позвонить: +998 78 555 75 55</a>
+    </nav>
+
+    <section class="hero" id="top">
+      <div class="hero__copy">
+        <h1 class="hero__title">
+          Сделай<br />
+          себя <span class="accent">сам</span>
+        </h1>
+        <p class="hero__lead">
+          Legenda<span class="tm">®</span> Fitness — это место, где вы находите поддержку, мотивацию и путь к лучшей версии себя
+        </p>
+      </div>
+      <div class="hero__media">
+        <img src="assets/hero.jpg" alt="Тренировки в Legenda®" />
+        <div class="cta-stack hero__cta">
+          <a class="btn btn--red" href="https://t.me/legendafitness" target="_blank" rel="noopener">Попробовать бесплатно</a>
+          <a class="btn btn--ghost" href="tel:+998785557555">Позвонить</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="why__inner">
+        <h2 class="why__title">Почему выбирают Legenda<span class="tm">®</span></h2>
+        <div class="why__grid">
+          <div class="stat">
+            <div class="stat__value">#1</div>
+            <div class="stat__label">Фокус на результате и комфорте каждого гостя</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">17ч</div>
+            <div class="stat__label">удобный график — с раннего утра до позднего вечера</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">5 000+</div>
+            <div class="stat__label">довольных клиентов</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">40+</div>
+            <div class="stat__label">профессиональных тренеров и инструкторов</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">80+</div>
+            <div class="stat__label">групповых программ: йога, пилатес, сайклинг и др.</div>
+          </div>
+          <div class="stat stat--eq">
+            <div class="stat__label">Современное тренажерное оборудование:</div>
+            <div class="eq-logos">
+              <img src="assets/eq1.png" alt="Technogym" />
+              <img src="assets/eq2.png" alt="Matrix" />
+              <img src="assets/eq3.png" alt="Precor" />
+              <img src="assets/eq4.png" alt="Life Fitness" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="activities" id="activities">
+      <div class="section-pad">
+        <h2 class="section-title section-title--left">Направления и активности</h2>
+        <p class="section-sub">Фитнес-клуб Legenda<span class="tm">®</span> — это:</p>
+      </div>
+      <div class="slider" id="activitySlider">
+        <article class="slide">
+          <img src="assets/activity-1.jpg" alt="Групповые тренировки в Legenda®" />
+          <div class="slide__bar"></div>
+          <p>Групповые тренировки: йога, пилатес, сайклинг</p>
+        </article>
+        <article class="slide">
+          <img src="assets/activity-3.jpg" alt="Зона единоборств" />
+          <div class="slide__bar"></div>
+          <p>Зона единоборств: бокс и боевые искусства</p>
+        </article>
+        <article class="slide">
+          <img src="assets/activity-2.jpg" alt="Персональные тренировки" />
+          <div class="slide__bar"></div>
+          <p>Персональные тренировки</p>
+        </article>
+        <article class="slide">
+          <img src="assets/activity-7.jpg" alt="Тренажёрный зал" />
+          <div class="slide__bar"></div>
+          <p>Силовой зал и современное оборудование</p>
+        </article>
+        <article class="slide">
+          <img src="assets/activity-5.jpg" alt="Степ и аэробика" />
+          <div class="slide__bar"></div>
+          <p>Степ, аэробика и танцевальные направления</p>
+        </article>
+        <article class="slide">
+          <img src="assets/activity-4.jpg" alt="Функциональный тренинг" />
+          <div class="slide__bar"></div>
+          <p>Функциональный тренинг, Bootcamp и др.</p>
+        </article>
+        <article class="slide">
+          <img src="assets/activity-6.jpg" alt="Восстановительные программы" />
+          <div class="slide__bar"></div>
+          <p>Реабилитационные и восстановительные программы</p>
+        </article>
+        <article class="slide">
+          <img class="slide__img--wide" src="assets/activity-kids.jpg" alt="Детская комната" />
+          <div class="slide__bar"></div>
+          <p>Детская комната</p>
+        </article>
+        <article class="slide">
+          <img class="slide__img--wide" src="assets/activity-hammam.jpg" alt="Турецкий хаммам" />
+          <div class="slide__bar"></div>
+          <p>Турецкий хаммам</p>
+        </article>
+        <article class="slide">
+          <img class="slide__img--wide" src="assets/activity-sauna.jpg" alt="Финская сауна" />
+          <div class="slide__bar"></div>
+          <p>Финская сауна</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="plans" id="plans">
+      <h2 class="section-title">Клубные карты</h2>
+
+      <article class="plan plan--featured">
+        <p class="plan__diff">Время посещения</p>
+        <div class="plan__time">07:00 – 00:00</div>
+        <h3 class="plan__name">Безлимит</h3>
+        <p class="plan__desc">Весь день без ограничений по часам</p>
+        <div class="plan__prices">
+          <div><span>12 мес</span><strong>9 600 000</strong> сум</div>
+          <div><span>6 мес</span><strong>5 900 000</strong> сум</div>
+          <div><span>3 мес</span><strong>3 800 000</strong> сум</div>
+        </div>
+        <div class="cta-stack">
+          <a class="btn btn--red" href="https://t.me/legendafitness" target="_blank" rel="noopener">Оформить в Telegram</a>
+          <a class="btn btn--ghost" href="tel:+998785557555">Позвонить</a>
+        </div>
+      </article>
+
+      <article class="plan">
+        <p class="plan__diff">Время посещения</p>
+        <div class="plan__time">07:00 – 17:00</div>
+        <h3 class="plan__name">Выгодный</h3>
+        <p class="plan__desc">Дневное окно: с утра до 17:00</p>
+        <div class="plan__prices">
+          <div><span>12 мес</span><strong>8 000 000</strong> сум</div>
+          <div><span>6 мес</span><strong>4 900 000</strong> сум</div>
+        </div>
+        <div class="cta-stack">
+          <a class="btn btn--red" href="https://t.me/legendafitness" target="_blank" rel="noopener">Оформить в Telegram</a>
+          <a class="btn btn--ghost" href="tel:+998785557555">Позвонить</a>
+        </div>
+      </article>
+
+      <article class="plan">
+        <p class="plan__diff">Время посещения</p>
+        <div class="plan__time">07:00 – 13:00</div>
+        <h3 class="plan__name">Утренний</h3>
+        <p class="plan__desc">Утреннее окно: с 07:00 до 13:00</p>
+        <div class="plan__prices">
+          <div><span>12 мес</span><strong>7 500 000</strong> сум</div>
+          <div><span>6 мес</span><strong>4 600 000</strong> сум</div>
+        </div>
+        <div class="cta-stack">
+          <a class="btn btn--red" href="https://t.me/legendafitness" target="_blank" rel="noopener">Оформить в Telegram</a>
+          <a class="btn btn--ghost" href="tel:+998785557555">Позвонить</a>
+        </div>
+      </article>
+
+      <div class="plans__shared">
+        <h3 class="plans__shared-title">Во все карты входит</h3>
+        <ul class="features">
+          <li>Тренажёрный зал и групповые занятия</li>
+          <li>Сайклинг и настольный теннис</li>
+          <li>Зона единоборств</li>
+          <li>Турецкий хаммам</li>
+          <li>Финская сауна</li>
+          <li>Детская комната</li>
+          <li>1 бесплатная заморозка (Рамадан)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="help">
+      <h2 class="help__title">Не знаете, какую клубную карту выбрать?</h2>
+      <p class="help__sub">Ориентируйтесь на удобное время визита — остальное одинаково. Напишите в Telegram или позвоните</p>
+      <div class="help__cards" aria-hidden="true">
+        <div class="mini-card"><span>07:00–13:00</span><b>Утренний</b></div>
+        <div class="mini-card"><span>07:00–17:00</span><b>Выгодный</b></div>
+        <div class="mini-card mini-card--accent"><span>07:00–00:00</span><b>Безлимит</b></div>
+      </div>
+      <div class="cta-stack">
+        <a class="btn btn--dark" href="https://t.me/legendafitness" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn btn--ghost" href="tel:+998785557555">Позвонить</a>
+      </div>
+    </section>
+
+    <section class="promos">
+      <h2 class="promo-heading">
+        Начните<br />на <span class="accent">лучших</span><br />условиях
+      </h2>
+      <a class="promo-card" href="https://t.me/legendafitness" target="_blank" rel="noopener">
+        <img src="assets/promo-1.jpg" alt="" />
+        <div class="promo-card__tag">50% OFF</div>
+        <div class="promo-card__text">
+          <strong>Половина цены — полная польза</strong>
+          <span>Написать в Telegram</span>
+        </div>
+      </a>
+      <a class="promo-card" href="https://t.me/legendafitness" target="_blank" rel="noopener">
+        <img src="assets/promo-2.jpg" alt="" />
+        <div class="promo-card__text">
+          <strong>Попробуйте бесплатно</strong>
+          <span>Первое занятие в подарок</span>
+        </div>
+      </a>
+      <a class="promo-card promo-card--duo" href="https://t.me/legendafitness" target="_blank" rel="noopener">
+        <img src="assets/promo-3.jpg" alt="" />
+        <div class="promo-card__text">
+          <strong>Две карты — одна цена</strong>
+          <span>Вторая карта в подарок</span>
+        </div>
+      </a>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about__media">
+        <img src="assets/about.jpg" alt="Интерьер клуба Legenda®" />
+      </div>
+      <div class="about__body">
+        <h2 class="section-title section-title--left">О клубе Legenda<span class="tm">®</span></h2>
+        <div class="about__blocks">
+          <div class="about__block about__block--mission">
+            <p class="about__mission-label">Наша миссия</p>
+            <p class="about__mission">Возродить истинные духовные, патриотические ценности путем популяризации здорового образа жизни и укрепления веры в семью и друзей.</p>
+          </div>
+          <div class="about__block about__block--task">
+            <p class="about__mission-label">Наша задача</p>
+            <p class="about__task">Научить тому, что каждый способен воспитать в себе силу духа, которая поможет стремиться к идеалам и достигать поставленных целей.</p>
+          </div>
+        </div>
+        <p class="about__note">Проведём презентацию клуба и покажем, как всё устроено изнутри</p>
+        <div class="cta-stack">
+          <a class="btn btn--red" href="https://t.me/legendafitness" target="_blank" rel="noopener">Записаться на экскурсию</a>
+          <a class="btn btn--ghost" href="tel:+998785557555">Позвонить</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <h2 class="footer__title">Контакты</h2>
+      <p class="footer__addr">
+        Ташкент, Яшнабадский район,<br />
+        ул. Махтумкули, 79 · этаж 10–11
+      </p>
+      <a class="footer__link" href="tel:+998785557555">+998 78 555 75 55</a>
+      <a class="footer__link" href="https://t.me/legendafitness" target="_blank" rel="noopener">Telegram @legendafitness</a>
+      <a class="footer__link" href="https://legendafitness.uz" target="_blank" rel="noopener">legendafitness.uz</a>
+      <p class="footer__hours">Пн–пт 07:00–00:00<br />Сб–вс 09:00–22:00</p>
+
+      <div class="map-embed">
+        <iframe
+          title="Legenda® на карте"
+          src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=126969166052"
+          width="100%"
+          height="400"
+          frameborder="0"
+          allowfullscreen="true"
+          style="border:0; display:block;"
+        ></iframe>
+      </div>
+      <a class="footer__map-link" href="https://yandex.uz/maps/org/legenda_fitness/126969166052/?ll=69.321140%2C41.304648&z=16" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+
+      <div class="footer__social">
+        <a href="https://t.me/legendafitness" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.svg" alt="" width="28" height="28" /></a>
+        <a href="https://t.me/legendafitnesstashkent" target="_blank" rel="noopener" aria-label="Telegram канал"><img src="assets/channel.svg" alt="" width="28" height="28" /></a>
+        <a href="https://www.instagram.com/legendafitness_tashkent" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/instagram.svg" alt="" width="28" height="28" /></a>
+        <a href="https://yandex.uz/maps/org/legenda_fitness/126969166052/?ll=69.321140%2C41.304648&z=16" target="_blank" rel="noopener" aria-label="Яндекс Карты"><img src="assets/maps.svg" alt="" width="28" height="28" /></a>
+      </div>
+      <p class="footer__copy">© 2026 Legenda<span class="tm">®</span></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
