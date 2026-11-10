@@ -187,14 +187,19 @@ button {
   position: absolute;
   left: var(--pad);
   right: var(--pad);
-  bottom: 18px;
+  bottom: 22px;
+}
+
+.hero__cta .btn--red {
+  border-radius: 0;
+  min-height: 52px;
 }
 
 .btn {
   display: grid;
   place-items: center;
-  min-height: 48px;
-  padding: 12px 16px;
+  min-height: 50px;
+  padding: 14px 16px;
   border-radius: 4px;
   font-family: var(--headline);
   font-size: 15px;
@@ -220,70 +225,111 @@ button {
 }
 
 .why {
-  background: var(--red);
-  padding: 42px var(--pad) 36px;
+  position: relative;
+  z-index: 1;
+  margin-top: -28px;
+  padding: 72px var(--pad) 88px;
+  background:
+    linear-gradient(rgba(238, 53, 55, 0.88), rgba(238, 53, 55, 0.92)),
+    url("assets/why-bg.jpg") center / cover no-repeat;
+  color: #fff;
+  overflow: hidden;
+}
+
+.why__wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 48px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.why__wave--top {
+  top: -1px;
+  height: 56px;
+  background: #000;
+  clip-path: ellipse(78% 100% at 50% 0%);
+}
+
+.why__wave--bottom {
+  bottom: -1px;
+  height: 64px;
+  background: #000;
+  clip-path: path("M0,28 C70,8 140,0 195,10 C260,22 320,52 390,36 L390,64 L0,64 Z");
+}
+
+.why__inner {
+  position: relative;
+  z-index: 1;
 }
 
 .why__title {
-  margin: 0 0 22px;
+  margin: 0 0 42px;
   text-align: center;
   font-family: var(--headline);
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
+  font-style: italic;
   text-transform: uppercase;
-  line-height: 1.15;
+  line-height: 1.12;
+  letter-spacing: 0.02em;
 }
 
 .why__grid {
   display: grid;
-  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 20px;
+  align-items: start;
 }
 
 .stat__value {
   font-family: var(--headline);
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 800;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .stat__label {
   font-size: 14px;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .stat--eq .stat__label {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .eq-logos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 14px;
+  grid-template-columns: 1fr;
+  gap: 12px;
   align-items: center;
+  justify-items: start;
 }
 
 .eq-logos img {
-  height: 28px;
+  height: 26px;
   width: auto;
-  max-width: 100%;
+  max-width: 140px;
   object-fit: contain;
   object-position: left center;
-  opacity: 0.95;
+  opacity: 0.98;
 }
 
 .section-pad {
-  padding: 40px var(--pad) 12px;
+  padding: 64px var(--pad) 16px;
 }
 
 .section-title {
   margin: 0 0 18px;
   text-align: center;
   font-family: var(--headline);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 800;
   text-transform: uppercase;
   line-height: 1.1;
+  letter-spacing: 0.03em;
 }
 
 .section-title--left {
@@ -292,20 +338,20 @@ button {
 
 .section-sub {
   margin: 0 0 8px;
-  font-size: 15px;
+  font-size: 16px;
   color: #ddd;
 }
 
 .activities {
-  padding-bottom: 20px;
+  padding-bottom: 28px;
 }
 
 .slider {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding: 8px var(--pad) 10px;
+  padding: 10px var(--pad) 14px;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -314,7 +360,7 @@ button {
 }
 
 .slide {
-  flex: 0 0 86%;
+  flex: 0 0 88%;
   scroll-snap-align: start;
   background: #000;
 }
@@ -337,21 +383,22 @@ button {
 }
 
 .slide p {
-  margin: 14px 0 0;
+  margin: 16px 0 0;
+  padding-right: 8px;
   font-size: 15px;
   line-height: 1.35;
 }
 
 .plans {
   background: #000;
-  padding: 48px var(--pad) 20px;
+  padding: 56px var(--pad) 28px;
 }
 
 .plan {
   background: var(--card);
   border-radius: 10px;
-  padding: 24px 22px 26px;
-  margin-bottom: 20px;
+  padding: 32px 24px 34px;
+  margin-bottom: 40px;
 }
 
 .plan--featured {
@@ -381,13 +428,13 @@ button {
 }
 
 .plan__name {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-family: var(--headline);
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  color: #ddd;
+  color: #fff;
 }
 
 .plan__desc {
@@ -450,8 +497,8 @@ button {
 .features li {
   position: relative;
   padding-left: 34px;
-  margin-bottom: 14px;
-  font-size: 14px;
+  margin-bottom: 16px;
+  font-size: 15px;
   line-height: 1.35;
 }
 
@@ -466,24 +513,26 @@ button {
 }
 
 .help {
-  margin-top: 20px;
-  padding: 42px var(--pad) 36px;
-  background: var(--red);
+  margin-top: 8px;
+  padding: 56px var(--pad) 48px;
+  background:
+    linear-gradient(180deg, #ee3537 0%, #c41f21 55%, #1a0505 100%);
   text-align: center;
 }
 
 .help__title {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   font-family: var(--headline);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 800;
   text-transform: uppercase;
   line-height: 1.15;
 }
 
 .help__sub {
-  margin: 0 0 28px;
-  font-size: 14px;
+  margin: 0 auto 28px;
+  max-width: 320px;
+  font-size: 15px;
   line-height: 1.4;
 }
 
@@ -544,12 +593,12 @@ button {
 }
 
 .promos {
-  padding: 56px var(--pad) 20px;
+  padding: 64px var(--pad) 28px;
   background: #000;
 }
 
 .promo-heading {
-  margin: 0 0 28px;
+  margin: 0 0 32px;
   text-align: center;
   font-family: var(--headline);
   font-size: 34px;
