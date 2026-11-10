@@ -144,15 +144,51 @@ button {
   font-weight: 600;
 }
 
+.hero {
+  position: relative;
+  background: #000;
+}
+
+.hero__media {
+  position: relative;
+  min-height: 620px;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.hero__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.2) 38%, rgba(0, 0, 0, 0.55) 72%, rgba(0, 0, 0, 0.85) 100%);
+  pointer-events: none;
+}
+
 .hero__copy {
-  padding: 28px var(--pad) 18px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 88px var(--pad) 36px;
   text-align: center;
 }
 
 .hero__title {
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   font-family: var(--headline);
-  font-size: 42px;
+  font-size: 44px;
   font-weight: 800;
   line-height: 1.05;
   text-transform: uppercase;
@@ -160,22 +196,11 @@ button {
 }
 
 .hero__lead {
-  margin: 0 auto;
+  margin: 0 auto 28px;
   max-width: 320px;
   font-size: 15px;
   line-height: 1.4;
   color: #eee;
-}
-
-.hero__media {
-  position: relative;
-}
-
-.hero__media img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: center 30%;
 }
 
 .cta-stack {
@@ -184,15 +209,13 @@ button {
 }
 
 .hero__cta {
-  position: absolute;
-  left: var(--pad);
-  right: var(--pad);
-  bottom: 22px;
+  width: 100%;
+  max-width: 354px;
 }
 
 .hero__cta .btn--red {
   border-radius: 0;
-  min-height: 52px;
+  min-height: 54px;
 }
 
 .btn {
@@ -224,101 +247,129 @@ button {
   color: #fff;
 }
 
-.why {
+.shape-border {
   position: relative;
-  z-index: 1;
-  margin-top: -28px;
-  padding: 72px var(--pad) 88px;
-  background:
-    linear-gradient(rgba(238, 53, 55, 0.88), rgba(238, 53, 55, 0.92)),
-    url("assets/why-bg.jpg") center / cover no-repeat;
-  color: #fff;
+  z-index: 3;
+  width: 100%;
+  line-height: 0;
+  pointer-events: none;
   overflow: hidden;
 }
 
-.why__wave {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 48px;
-  pointer-events: none;
-  z-index: 2;
+.shape-border svg {
+  display: block;
+  width: 100%;
+  /* Match Chekhov T796 4vw at 390px mobile (~16px), not desktop viewport vw */
+  height: 16px;
 }
 
-.why__wave--top {
-  top: -1px;
-  height: 56px;
+.shape-border--into-why {
+  margin-bottom: -1px;
   background: #000;
-  clip-path: ellipse(78% 100% at 50% 0%);
 }
 
-.why__wave--bottom {
-  bottom: -1px;
-  height: 64px;
-  background: #000;
-  clip-path: path("M0,28 C70,8 140,0 195,10 C260,22 320,52 390,36 L390,64 L0,64 Z");
+.shape-border--into-why svg {
+  fill: var(--red);
+}
+
+.shape-border--out-why {
+  margin-top: -1px;
+  background: var(--red);
+}
+
+.shape-border--out-why svg {
+  fill: #000;
+}
+
+.why {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 64px 20px 80px;
+  color: #fff;
+  background-color: var(--red);
+  background-image:
+    linear-gradient(rgba(238, 53, 55, 0.9), rgba(238, 53, 55, 0.9)),
+    url("assets/why-bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .why__inner {
   position: relative;
   z-index: 1;
+  max-width: 340px;
+  margin: 0 auto;
 }
 
 .why__title {
-  margin: 0 0 42px;
+  margin: 0 0 52px;
   text-align: center;
   font-family: var(--headline);
-  font-size: 28px;
+  font-size: 48px;
   font-weight: 800;
-  font-style: italic;
   text-transform: uppercase;
   line-height: 1.12;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.why__title em {
+  font-style: italic;
+  font-weight: 800;
+  color: #201e1e;
 }
 
 .why__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px 20px;
+  grid-template-columns: 160px 1fr;
+  column-gap: 20px;
+  row-gap: 40px;
   align-items: start;
 }
 
 .stat__value {
-  font-family: var(--headline);
-  font-size: 38px;
-  font-weight: 800;
-  line-height: 1;
-  margin-bottom: 10px;
+  font-family: var(--body);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .stat__label {
-  font-size: 14px;
+  font-family: var(--body);
+  font-size: 15px;
+  font-weight: 400;
   line-height: 1.4;
 }
 
-.stat--eq .stat__label {
-  margin-bottom: 12px;
+.stat__label--eq {
+  font-weight: 700;
+  margin-bottom: 14px;
 }
 
 .eq-logos {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 18px;
   align-items: center;
   justify-items: start;
 }
 
 .eq-logos img {
-  height: 26px;
-  width: auto;
-  max-width: 140px;
+  display: block;
+  height: auto;
+  width: 118px;
+  max-width: 100%;
   object-fit: contain;
   object-position: left center;
-  opacity: 0.98;
 }
 
 .section-pad {
-  padding: 64px var(--pad) 16px;
+  padding: 48px var(--pad) 16px;
 }
 
 .section-title {
@@ -367,7 +418,7 @@ button {
 
 .slide img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   object-position: center 35%;
 }
