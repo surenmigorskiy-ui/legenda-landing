@@ -213,8 +213,9 @@ applyLang(initialLang);
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!reduceMotion && "IntersectionObserver" in window) {
-  const motionNodes = document.querySelectorAll(
-    ".stat, .slide, .plan, .promo-card, .help, .about, .section-title, .plans__shared, .features li, .mini-card, .about__eyebrow, .about__cta-title, .about__cta-lead"
+  // One section at a time; children stagger via CSS delays.
+  const motionSections = document.querySelectorAll(
+    ".why, .activities, .plans, .help, .promos, .about"
   );
   const motionObserver = new IntersectionObserver(
     (entries) => {
@@ -224,8 +225,8 @@ if (!reduceMotion && "IntersectionObserver" in window) {
         motionObserver.unobserve(entry.target);
       });
     },
-    { threshold: 0.08, rootMargin: "0px 0px -8% 0px" }
+    { threshold: 0.22, rootMargin: "0px 0px -12% 0px" }
   );
 
-  motionNodes.forEach((node) => motionObserver.observe(node));
+  motionSections.forEach((node) => motionObserver.observe(node));
 }
