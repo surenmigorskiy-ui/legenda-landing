@@ -107,15 +107,10 @@ const UZ = {
   "promo.duo": "Ikki karta — bitta narx",
   "promo.gift2": "Ikkinchi karta — sovgʻa",
   "about.alt": "Legenda® klubi interyeri",
-  "about.title": "Legenda<span class=\"tm\">®</span> klubi haqida",
-  "about.missionLabel": "Bizning missiyamiz",
-  "about.mission":
-    "Sogʻlom turmush tarzini ommalashtirish hamda oila va doʻstlarga boʻlgan ishonchni mustahkamlash orqali haqiqiy maʼnaviy va vatanparvarlik qadriyatlarini tiklash.",
-  "about.taskLabel": "Bizning vazifamiz",
-  "about.task":
-    "Har bir inson oʻzida ideallarga intilish va qoʻyilgan maqsadlarga erishishga yordam beradigan ruh kuchini tarbiyalay olishini oʻrgatish.",
-  "about.note":
-    "Klub taqdimotini oʻtkazamiz va ichkarida hammasi qanday tashkil etilganini koʻrsatamiz",
+  "about.eyebrow": "Ertaga emas. Hozir.",
+  "about.ctaTitle": "Kutish yetarli.<br />Legenda<span class=\"tm\">®</span>ga keling",
+  "about.ctaLead":
+    "Klub boʻylab bepul ekskursiya, jonli zal va bahonlarsiz start. Yozing yoki qoʻngʻiroq qiling — tashrifni bron qilamiz.",
   "footer.title": "Kontaktlar",
   "footer.hours": "Dush–Juma 07:00–00:00<br />Shan–Yak 09:00–22:00",
   "map.title": "Legenda® xaritada",
@@ -218,7 +213,9 @@ applyLang(initialLang);
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!reduceMotion && "IntersectionObserver" in window) {
-  const motionNodes = document.querySelectorAll(".stat, .slide");
+  const motionNodes = document.querySelectorAll(
+    ".stat, .slide, .plan, .promo-card, .help, .about, .section-title, .plans__shared, .features li, .mini-card, .about__eyebrow, .about__cta-title, .about__cta-lead"
+  );
   const motionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -227,7 +224,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
         motionObserver.unobserve(entry.target);
       });
     },
-    { threshold: 0.05 }
+    { threshold: 0.08, rootMargin: "0px 0px -8% 0px" }
   );
 
   motionNodes.forEach((node) => motionObserver.observe(node));
