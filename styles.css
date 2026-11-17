@@ -85,7 +85,45 @@ button {
   line-height: 0;
   flex: 1;
   min-width: 0;
-  max-width: calc(100% - 52px);
+  max-width: calc(100% - 128px);
+}
+
+.header__tools {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 2px;
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+}
+
+.lang__btn {
+  min-width: 32px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 2px;
+  font-family: var(--headline);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.lang__btn.is-active {
+  background: var(--red);
+  color: #fff;
+}
+
+.lang__btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
 }
 
 .header__logo img {
