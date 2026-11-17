@@ -213,20 +213,52 @@ applyLang(initialLang);
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (!reduceMotion && "IntersectionObserver" in window) {
-  // One section at a time; children stagger via CSS delays.
-  const motionSections = document.querySelectorAll(
-    ".why, .activities, .plans, .help, .promos, .about"
-  );
-  const motionObserver = new IntersectionObserver(
+  const STAGGER = 0.2;
+
+  function arm(section, selectors) {
+    let i = 0;
+    selectors.forEach((sel) => {
+      section.querySelectorAll(sel).forEach((el) => {
+        el.classList.add("m");
+        el.style.setProperty("--m-delay", (i * STAGGER).toFixed(2) + "s");
+        i += 1;
+      });
+    });
+  }
+
+  const sections = [
+    [".why", [".stat"]],
+    [".activities", [".section-title", ".section-sub", ".slide"]],
+    [".plans", [".section-title", ".plan", ".plans__shared"]],
+    [".help", [".help__title", ".help__sub", ".mini-card", ".cta-stack"]],
+    [".promos", [".promo-heading", ".promo-card"]],
+    [".about", [".about__eyebrow", ".about__cta-title", ".about__cta-lead", ".cta-stack"]],
+  ];
+
+  const nodes = [];
+  sections.forEach(([secSel, childSels]) => {
+    const section = document.querySelector(secSel);
+    if (!section) return;
+    arm(section, childSels);
+    nodes.push(section);
+  });
+
+  const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-in");
-        motionObserver.unobserve(entry.target);
+        io.unobserve(entry.target);
       });
     },
-    { threshold: 0.22, rootMargin: "0px 0px -12% 0px" }
+    { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
   );
 
-  motionSections.forEach((node) => motionObserver.observe(node));
+  // Arm first, then enable CSS offsets, then observe (avoids a snap-flash).
+  requestAnimationFrame(() => {
+    document.documentElement.classList.add("motion-on");
+    requestAnimationFrame(() => {
+      nodes.forEach((node) => io.observe(node));
+    });
+  });
 }
