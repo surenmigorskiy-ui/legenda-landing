@@ -214,3 +214,21 @@ try {
   initialLang = "ru";
 }
 applyLang(initialLang);
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reduceMotion && "IntersectionObserver" in window) {
+  const motionNodes = document.querySelectorAll(".stat, .slide");
+  const motionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-in");
+        motionObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.05 }
+  );
+
+  motionNodes.forEach((node) => motionObserver.observe(node));
+}
