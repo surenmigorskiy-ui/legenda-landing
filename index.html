@@ -22,20 +22,19 @@
           decoding="async"
         />
       </a>
-      <button class="burger" type="button" aria-label="Меню" id="menuBtn">
+      <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="drawer" id="menuBtn">
         <img src="assets/burger.svg" alt="" width="22" height="16" />
       </button>
+      <nav class="drawer" id="drawer">
+        <a href="#why">Почему мы</a>
+        <a href="#activities">Направления</a>
+        <a href="#plans">Клубные карты</a>
+        <a href="#about">О клубе</a>
+        <a href="#contact">Контакты</a>
+        <a href="https://t.me/legendafitness" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="drawer__call" href="tel:+998785557555">Позвонить: +998 78 555 75 55</a>
+      </nav>
     </header>
-
-    <nav class="drawer" id="drawer" hidden>
-      <a href="#why">Почему мы</a>
-      <a href="#activities">Направления</a>
-      <a href="#plans">Клубные карты</a>
-      <a href="#about">О клубе</a>
-      <a href="#contact">Контакты</a>
-      <a href="https://t.me/legendafitness" target="_blank" rel="noopener">Написать в Telegram</a>
-      <a class="drawer__call" href="tel:+998785557555">Позвонить: +998 78 555 75 55</a>
-    </nav>
 
     <section class="hero" id="top">
       <div class="hero__media">
@@ -295,36 +294,42 @@
     </section>
 
     <footer class="footer" id="contact">
-      <h2 class="footer__title">Контакты</h2>
-      <p class="footer__addr">
-        Ташкент, Яшнабадский район,<br />
-        ул. Махтумкули, 79 · этаж 10–11
-      </p>
-      <a class="footer__link" href="tel:+998785557555">+998 78 555 75 55</a>
-      <a class="footer__link" href="https://t.me/legendafitness" target="_blank" rel="noopener">Telegram @legendafitness</a>
-      <a class="footer__link" href="https://legendafitness.uz" target="_blank" rel="noopener">legendafitness.uz</a>
-      <p class="footer__hours">Пн–пт 07:00–00:00<br />Сб–вс 09:00–22:00</p>
-
-      <div class="map-embed">
-        <iframe
-          title="Legenda® на карте"
-          src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=126969166052"
-          width="100%"
-          height="400"
-          frameborder="0"
-          allowfullscreen="true"
-          style="border:0; display:block;"
-        ></iframe>
+      <div class="footer__info">
+        <h2 class="footer__title">Контакты</h2>
+        <p class="footer__addr">
+          Ташкент, Яшнабадский район,<br />
+          ул. Махтумкули, 79 · этаж 10–11
+        </p>
+        <a class="footer__link" href="tel:+998785557555">+998 78 555 75 55</a>
+        <a class="footer__link" href="https://t.me/legendafitness" target="_blank" rel="noopener">Telegram @legendafitness</a>
+        <a class="footer__link" href="https://legendafitness.uz" target="_blank" rel="noopener">legendafitness.uz</a>
+        <p class="footer__hours">Пн–пт 07:00–00:00<br />Сб–вс 09:00–22:00</p>
       </div>
-      <a class="footer__map-link" href="https://yandex.uz/maps/org/legenda_fitness/126969166052/?ll=69.321140%2C41.304648&z=16" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
 
-      <div class="footer__social">
-        <a href="https://t.me/legendafitness" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.svg" alt="" width="28" height="28" /></a>
-        <a href="https://t.me/legendafitnesstashkent" target="_blank" rel="noopener" aria-label="Telegram канал"><img src="assets/channel.svg" alt="" width="28" height="28" /></a>
-        <a href="https://www.instagram.com/legendafitness_tashkent" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/instagram.svg" alt="" width="28" height="28" /></a>
-        <a href="https://yandex.uz/maps/org/legenda_fitness/126969166052/?ll=69.321140%2C41.304648&z=16" target="_blank" rel="noopener" aria-label="Яндекс Карты"><img src="assets/maps.svg" alt="" width="28" height="28" /></a>
+      <div class="footer__mapcol">
+        <div class="map-embed">
+          <iframe
+            title="Legenda® на карте"
+            src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=126969166052"
+            width="100%"
+            height="400"
+            frameborder="0"
+            allowfullscreen="true"
+            style="border:0; display:block;"
+          ></iframe>
+        </div>
+        <a class="footer__map-link" href="https://yandex.uz/maps/org/legenda_fitness/126969166052/?ll=69.321140%2C41.304648&z=16" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
       </div>
-      <p class="footer__copy">© 2026 Legenda<span class="tm">®</span></p>
+
+      <div class="footer__end">
+        <div class="footer__social">
+          <a href="https://t.me/legendafitness" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.svg" alt="" width="28" height="28" /></a>
+          <a href="https://t.me/legendafitnesstashkent" target="_blank" rel="noopener" aria-label="Telegram канал"><img src="assets/channel.svg" alt="" width="28" height="28" /></a>
+          <a href="https://www.instagram.com/legendafitness_tashkent" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/instagram.svg" alt="" width="28" height="28" /></a>
+          <a href="https://yandex.uz/maps/org/legenda_fitness/126969166052/?ll=69.321140%2C41.304648&z=16" target="_blank" rel="noopener" aria-label="Яндекс Карты"><img src="assets/maps.svg" alt="" width="28" height="28" /></a>
+        </div>
+        <p class="footer__copy">© 2026 Legenda<span class="tm">®</span></p>
+      </div>
     </footer>
   </div>
 
