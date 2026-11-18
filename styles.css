@@ -382,7 +382,7 @@ button {
 }
 
 .why__title {
-  margin: 0 0 16px;
+  margin: 0 0 52px;
   text-align: center;
   font-family: var(--headline);
   font-size: 48px;
@@ -397,16 +397,6 @@ button {
   font-style: italic;
   font-weight: 800;
   color: #201e1e;
-}
-
-.why__lead {
-  margin: 0 0 52px;
-  text-align: center;
-  font-family: var(--body);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.4;
-  color: #fff;
 }
 
 .why__grid {
@@ -1216,12 +1206,7 @@ button {
 
   .why__title {
     font-size: clamp(56px, 5.2vw, 76px);
-    margin-bottom: 20px;
-  }
-
-  .why__lead {
     margin-bottom: 72px;
-    font-size: 18px;
   }
 
   .why__grid {

@@ -52,7 +52,6 @@ const UZ = {
   "cta.signup": "Telegramda yozilish",
   "cta.tour": "Prezentatsiyaga yozilish",
   "why.title": "Nega<br /><em>tanlashadi</em><br />Legenda<span class=\"tm\">®</span>",
-  "why.lead": "Qulaylik, servis va har biriga eʼtibor",
   "why.l1": "1\u00A0700\u00A0m²",
   "why.d1": "Biznes markazining 10 va 11-qavatlari",
   "why.l2": "17 klub",
@@ -235,7 +234,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
   }
 
   const sections = [
-    [".why", [".why__lead", ".why-cell"]],
+    [".why", [".why-cell"]],
     [".activities", [".section-title", ".section-sub", ".slide"]],
     [".recovery", [".section-title", ".zone"]],
     [".plans", [".section-title", ".plan", ".plans__shared"]],
