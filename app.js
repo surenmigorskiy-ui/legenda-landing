@@ -87,6 +87,7 @@ const UZ = {
   "act.9": "Turk hammomi",
   "act.10.alt": "Fin saunasi",
   "act.10": "Fin saunasi",
+  "recovery.title": "Tiklanish zonalari",
   "plans.title": "Klub kartalari",
   "plan.timeLabel": "Tashrif vaqti",
   "plan.unlimited": "Cheksiz",
@@ -235,6 +236,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
   const sections = [
     [".why", [".why__lead", ".why-cell"]],
     [".activities", [".section-title", ".section-sub", ".slide"]],
+    [".recovery", [".section-title", ".zone"]],
     [".plans", [".section-title", ".plan", ".plans__shared"]],
     [".help", [".help__title", ".help__sub", ".mini-card", ".cta-stack"]],
     [".promos", [".promo-heading", ".promo-card"]],

@@ -68,9 +68,9 @@ button {
   transform: translateX(-50%);
   width: 100%;
   max-width: var(--max);
-  /* Tall overlay so the fade can finish soft — no hard strip edge */
-  height: min(42vh, 300px);
-  min-height: 220px;
+  /* Soft fade overlay — 30% shorter vertical reach */
+  height: min(29.4vh, 210px);
+  min-height: 154px;
   z-index: 100;
   display: flex;
   align-items: flex-start;
@@ -540,12 +540,14 @@ button {
   object-position: center center;
 }
 
-.slide img.slide__img--hammam {
+.slide img.slide__img--hammam,
+.zone img.slide__img--hammam {
   object-fit: cover;
   object-position: center center;
 }
 
-.slide img.slide__img--sauna {
+.slide img.slide__img--sauna,
+.zone img.slide__img--sauna {
   object-fit: cover;
   object-position: center center;
 }
@@ -557,11 +559,35 @@ button {
   transform-origin: left center;
 }
 
-.slide p {
+.slide p,
+.zone p {
   margin: 16px 0 0;
   padding-right: 8px;
   font-size: 15px;
   line-height: 1.35;
+}
+
+.recovery {
+  padding-bottom: 36px;
+  background: #000;
+}
+
+.recovery__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 10px var(--pad) 14px;
+}
+
+.zone {
+  background: #000;
+}
+
+.zone img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .plans {
@@ -1005,8 +1031,8 @@ button {
     transform: none;
     width: 100%;
     max-width: none;
-    height: min(36vh, 280px);
-    min-height: 200px;
+    height: min(25.2vh, 196px);
+    min-height: 140px;
     padding: 16px 40px 0;
     gap: 12px 28px;
     align-items: flex-start;
@@ -1075,6 +1101,7 @@ button {
   #top,
   #why,
   #activities,
+  #recovery,
   #plans,
   #about,
   #contact {
@@ -1194,7 +1221,9 @@ button {
   }
 
   .activities .section-pad,
-  .activities .slider {
+  .activities .slider,
+  .recovery .section-pad,
+  .recovery__grid {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -1205,6 +1234,22 @@ button {
   .activities .section-pad {
     padding-top: 72px;
     padding-bottom: 8px;
+  }
+
+  .recovery .section-pad {
+    padding-top: 24px;
+    padding-bottom: 8px;
+  }
+
+  .recovery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 20px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
+
+  .recovery {
+    padding-bottom: 56px;
   }
 
   .section-title {
@@ -1511,6 +1556,8 @@ button {
 
   .activities .section-pad,
   .activities .slider,
+  .recovery .section-pad,
+  .recovery__grid,
   .why__inner {
     max-width: 1240px;
   }
