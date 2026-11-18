@@ -45,7 +45,7 @@ const UZ = {
   "hero.alt": "Legenda®dagi mashgʻulotlar",
   "hero.title": "Oʻzingni<br />oʻzing <span class=\"accent\">qil</span>",
   "hero.lead":
-    "Legenda<span class=\"tm\">®</span> Fitness Maxtumquli — bu siz qoʻllab-quvvatlashni, motivatsiyani va oʻzingizning yaxshiroq versiyangiz sari yoʻlni topadigan joy",
+    "Legenda<span class=\"tm\">®</span> Fitness Maxtumquli — kuch va xarakter tarbiyalanadigan joy",
   "cta.try": "Bepul sinab koʻrish",
   "cta.call": "Qoʻngʻiroq qilish",
   "cta.write": "Telegramga yozish",
