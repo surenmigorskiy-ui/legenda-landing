@@ -513,10 +513,9 @@ button {
 }
 
 .slide img.slide__img--personal {
-  /* Source is portrait; contain = max zoom-out in the 3:2 slot. Y = 42% + 35%. */
-  object-fit: contain;
-  object-position: center 77%;
-  background: #0a0a0a;
+  /* Cover fills the 3:2 slot (no letterbox); keep both people in the band */
+  object-fit: cover;
+  object-position: center 55%;
 }
 
 .slide img.slide__img--strength {
