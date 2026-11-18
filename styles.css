@@ -215,8 +215,8 @@ button {
   height: 100%;
   min-height: 620px;
   object-fit: cover;
-  /* Moderate headroom: heads clear below logo+tagline */
-  object-position: center 30%;
+  /* Heads clear below logo+tagline with visible dark gap */
+  object-position: center 28%;
 }
 
 .hero__shade {
@@ -1145,7 +1145,7 @@ button {
     height: 100%;
     min-height: 0;
     object-fit: cover;
-    object-position: center 28%;
+    object-position: center 26%;
   }
 
   .hero__shade {
