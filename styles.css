@@ -823,6 +823,18 @@ button {
   color: #eee;
 }
 
+.promo-card--site .promo-card__text {
+  right: 96px;
+}
+
+.promo-card--site .promo-card__text strong {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
 .about {
   background: #000;
   padding: 36px 0 20px;
@@ -1388,6 +1400,15 @@ button {
 
   .promo-card img {
     height: 340px;
+  }
+
+  .promo-card--site .promo-card__text {
+    right: 16px;
+  }
+
+  .promo-card--site .promo-card__text strong {
+    font-size: 15px;
+    letter-spacing: -0.015em;
   }
 }
 
