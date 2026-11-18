@@ -1048,9 +1048,10 @@ button {
   }
 
   .header {
-    position: relative;
-    top: auto;
-    left: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     transform: none;
     width: 100%;
     max-width: none;
@@ -1061,11 +1062,24 @@ button {
     grid-template-areas: "logo nav tools";
     align-items: center;
     gap: 12px 28px;
-    padding: 0 32px;
-    background: #050505;
-    border-bottom: 1px solid #1c1c1c;
-    pointer-events: auto;
+    padding: 8px 32px 36px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.68) 34%,
+      rgba(0, 0, 0, 0.28) 68%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    border-bottom: 0;
+    pointer-events: none;
     z-index: 20;
+  }
+
+  .header__logo,
+  .header__tools,
+  .drawer,
+  .drawer a {
+    pointer-events: auto;
   }
 
   .header__logo {
@@ -1184,7 +1198,7 @@ button {
     align-items: flex-start;
     justify-content: flex-end;
     text-align: left;
-    padding: 24px 0 36px max(32px, calc((100% - 1200px) / 2));
+    padding: 24px 0 108px max(32px, calc((100% - 1200px) / 2));
   }
 
   .hero__title {
@@ -1241,6 +1255,11 @@ button {
 
   .shape-border svg {
     height: 56px;
+  }
+
+  .hero + .shape-border--into-why {
+    background: transparent;
+    margin-top: -56px;
   }
 
   .why {
@@ -1639,7 +1658,8 @@ button {
 
 @media (min-width: 1100px) {
   .header {
-    padding: 0 40px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   .header__logo img {
@@ -1654,6 +1674,10 @@ button {
 
   .shape-border svg {
     height: 72px;
+  }
+
+  .hero + .shape-border--into-why {
+    margin-top: -72px;
   }
 
   .help {
@@ -1723,7 +1747,7 @@ button {
     grid-template-areas:
       "logo tools"
       "nav nav";
-    padding: 12px 32px 0;
+    padding: 12px 32px 32px;
     gap: 4px 16px;
   }
 
@@ -1731,8 +1755,8 @@ button {
   .drawer.is-open {
     justify-content: space-between;
     width: 100%;
-    padding: 10px 0 12px;
-    border-top: 1px solid #1c1c1c;
+    padding: 10px 0 0;
+    border-top: 0;
   }
 
   .drawer__call {
