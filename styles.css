@@ -246,8 +246,6 @@ button {
 
 .hero__title {
   margin: 0 0 16px;
-  /* Both lines move together; the original gap crosses the chest marks. */
-  transform: translateY(24px);
   font-family: var(--headline);
   font-size: 44px;
   font-weight: 800;
@@ -1156,7 +1154,6 @@ button {
   }
 
   .hero__title {
-    transform: none;
     max-width: 640px;
     font-size: clamp(56px, 6vw, 92px);
   }
