@@ -532,7 +532,8 @@ button {
 }
 
 .slide img.slide__img--recover {
-  object-position: center 100%;
+  /* Shifted up ~20% from bottom so trainer head stays in frame */
+  object-position: center 80%;
 }
 
 .slide img.slide__img--kids {
