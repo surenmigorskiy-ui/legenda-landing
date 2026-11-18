@@ -216,7 +216,7 @@ button {
   min-height: 620px;
   object-fit: cover;
   /* Rebaked with ~13% more headroom; bias up so head stays in frame */
-  object-position: center 32%;
+  object-position: center 26%;
 }
 
 .hero__shade {
@@ -1138,7 +1138,7 @@ button {
     height: 100%;
     min-height: 0;
     object-fit: cover;
-    object-position: center 28%;
+    object-position: center 22%;
   }
 
   .hero__shade {
