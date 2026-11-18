@@ -367,7 +367,7 @@ button {
   background-color: var(--red);
   background-image:
     linear-gradient(rgba(238, 53, 55, 0.9), rgba(238, 53, 55, 0.9)),
-    url("assets/why-bg.jpg");
+    url("assets/why-bg.webp");
   background-position: center 40%;
   background-size: cover;
   background-repeat: no-repeat;
