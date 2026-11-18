@@ -79,11 +79,12 @@ button {
   padding: 12px 12px 0 14px;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.62) 14%,
-    rgba(0, 0, 0, 0.36) 32%,
-    rgba(0, 0, 0, 0.16) 52%,
-    rgba(0, 0, 0, 0.06) 74%,
+    rgba(0, 0, 0, 0.94) 0%,
+    rgba(0, 0, 0, 0.82) 16%,
+    rgba(0, 0, 0, 0.55) 34%,
+    rgba(0, 0, 0, 0.28) 52%,
+    rgba(0, 0, 0, 0.1) 72%,
+    rgba(0, 0, 0, 0.02) 88%,
     rgba(0, 0, 0, 0) 100%
   );
   backdrop-filter: none;
@@ -502,45 +503,45 @@ button {
   object-position: center 58%;
 }
 
-/* Keep people / action / wall LEGENDA in frame, not ceiling */
+/* Keep people / action in frame — not ceiling, wall edge, or empty window */
 .slide img.slide__img--group {
-  object-position: center 52%;
-}
-
-.slide img.slide__img--boxing {
-  object-position: center 52%;
-}
-
-.slide img.slide__img--personal {
-  object-position: center 48%;
-}
-
-.slide img.slide__img--strength {
-  object-position: center 55%;
-}
-
-.slide img.slide__img--step {
   object-position: center 50%;
 }
 
-.slide img.slide__img--func {
-  object-position: center 58%;
+.slide img.slide__img--boxing {
+  object-position: center 88%;
 }
 
-.slide img.slide__img--recover {
-  object-position: center 62%;
-}
-
-.slide img.slide__img--kids {
-  object-position: center 46%;
-}
-
-.slide img.slide__img--hammam {
+.slide img.slide__img--personal {
   object-position: center 42%;
 }
 
+.slide img.slide__img--strength {
+  object-position: center 52%;
+}
+
+.slide img.slide__img--step {
+  object-position: 42% 72%;
+}
+
+.slide img.slide__img--func {
+  object-position: 36% 72%;
+}
+
+.slide img.slide__img--recover {
+  object-position: center 55%;
+}
+
+.slide img.slide__img--kids {
+  object-position: center 70%;
+}
+
+.slide img.slide__img--hammam {
+  object-position: 48% 38%;
+}
+
 .slide img.slide__img--sauna {
-  object-position: center 48%;
+  object-position: center 42%;
 }
 
 .slide__bar {
@@ -1013,11 +1014,12 @@ button {
     align-items: flex-start;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.86) 0%,
-      rgba(0, 0, 0, 0.58) 16%,
-      rgba(0, 0, 0, 0.3) 36%,
-      rgba(0, 0, 0, 0.12) 58%,
-      rgba(0, 0, 0, 0.04) 78%,
+      rgba(0, 0, 0, 0.92) 0%,
+      rgba(0, 0, 0, 0.78) 18%,
+      rgba(0, 0, 0, 0.48) 38%,
+      rgba(0, 0, 0, 0.22) 56%,
+      rgba(0, 0, 0, 0.08) 74%,
+      rgba(0, 0, 0, 0.02) 88%,
       rgba(0, 0, 0, 0) 100%
     );
   }
