@@ -713,11 +713,16 @@ button {
 }
 
 .help {
-  margin-top: 8px;
+  margin-top: 0;
   padding: 56px var(--pad) 48px;
-  background:
-    linear-gradient(180deg, #ee3537 0%, #c41f21 55%, #1a0505 100%);
   text-align: center;
+  background-color: var(--red);
+  background-image:
+    linear-gradient(rgba(238, 53, 55, 0.9), rgba(238, 53, 55, 0.9)),
+    url("assets/why-bg.webp");
+  background-position: center 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .help__title {
