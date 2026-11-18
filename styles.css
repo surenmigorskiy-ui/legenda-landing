@@ -1048,30 +1048,36 @@ button {
   }
 
   .header {
-    position: sticky;
-    top: 0;
+    position: relative;
+    top: auto;
     left: auto;
     transform: none;
     width: 100%;
     max-width: none;
     height: auto;
-    min-height: 72px;
-    padding: 12px 32px;
-    gap: 10px 24px;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "logo nav tools";
     align-items: center;
-    flex-wrap: wrap;
-    background: rgba(8, 8, 8, 0.96);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 12px 28px;
+    padding: 0 32px;
+    background: #050505;
+    border-bottom: 1px solid #1c1c1c;
     pointer-events: auto;
+    z-index: 20;
   }
 
   .header__logo {
+    grid-area: logo;
     flex: 0 0 auto;
+    width: max-content;
+    justify-self: start;
     max-width: none;
   }
 
   .header__logo img {
-    height: 44px;
+    height: 42px;
   }
 
   .burger {
@@ -1079,12 +1085,14 @@ button {
   }
 
   .header__tools {
-    order: 2;
-    margin-left: auto;
+    grid-area: tools;
+    order: 0;
+    margin-left: 0;
   }
 
   .drawer,
   .drawer.is-open {
+    grid-area: nav;
     position: static;
     top: auto;
     left: auto;
@@ -1092,22 +1100,36 @@ button {
     width: auto;
     max-width: none;
     display: flex;
-    flex: 1 1 280px;
+    flex: none;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
-    gap: 6px 16px;
-    padding: 0;
+    gap: 8px 18px;
+    padding: 14px 0;
     background: transparent;
     border: 0;
     pointer-events: auto;
   }
 
   .drawer a {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     white-space: nowrap;
     letter-spacing: 0.01em;
+  }
+
+  .drawer__call {
+    margin-left: 6px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 4px;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .drawer__call:hover {
+    border-color: var(--red);
+    color: #fff;
   }
 
   .drawer a:hover,
@@ -1131,11 +1153,15 @@ button {
   #plans,
   #about,
   #contact {
-    scroll-margin-top: 88px;
+    scroll-margin-top: 24px;
+  }
+
+  .hero {
+    margin-top: 0;
   }
 
   .hero__media {
-    height: clamp(560px, calc(100vh - 76px), 820px);
+    height: clamp(620px, 78vh, 780px);
     min-height: 0;
     overflow: hidden;
   }
@@ -1149,30 +1175,30 @@ button {
   }
 
   .hero__shade {
-    background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.04) 24%, rgba(0, 0, 0, 0.2) 62%, rgba(0, 0, 0, 0.7) 100%),
-      linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.4) 36%, rgba(0, 0, 0, 0.1) 62%, rgba(0, 0, 0, 0.22) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.28) 68%, rgba(0, 0, 0, 0.86) 100%);
   }
 
   .hero__copy {
+    right: auto;
+    width: min(520px, 46%);
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-end;
     text-align: left;
-    padding: 56px max(32px, calc((100% - 1200px) / 2)) 72px;
+    padding: 24px 0 36px max(32px, calc((100% - 1200px) / 2));
   }
 
   .hero__title {
-    max-width: 640px;
-    margin-bottom: 18px;
-    font-size: clamp(52px, 5.4vw, 84px);
+    max-width: none;
+    margin-bottom: 12px;
+    font-size: clamp(42px, 4.2vw, 64px);
     letter-spacing: -0.02em;
   }
 
   .hero__lead {
-    margin: 0 0 28px;
-    max-width: 440px;
-    font-size: 18px;
-    line-height: 1.45;
+    margin: 0 0 18px;
+    max-width: none;
+    font-size: 16px;
+    line-height: 1.4;
     text-align: left;
   }
 
@@ -1226,29 +1252,29 @@ button {
   }
 
   .why__title {
-    font-size: clamp(40px, 4.2vw, 64px);
-    margin-bottom: 56px;
+    font-size: clamp(40px, 4vw, 58px);
+    margin-bottom: 72px;
     letter-spacing: -0.02em;
   }
 
   .why__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 32px;
-    row-gap: 40px;
-    max-width: none;
-    margin: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 72px;
+    row-gap: 52px;
+    max-width: 860px;
+    margin: 0 auto;
   }
 
   .why-cell__label {
-    font-size: clamp(30px, 3vw, 46px);
-    margin-bottom: 12px;
+    font-size: clamp(48px, 4.4vw, 68px);
+    margin-bottom: 10px;
     white-space: nowrap;
   }
 
   .why-cell__line {
-    font-size: 15px;
-    max-width: 18em;
-    line-height: 1.4;
+    font-size: 16px;
+    max-width: 14em;
+    line-height: 1.35;
   }
 
   .activities,
@@ -1614,20 +1640,16 @@ button {
 @media (min-width: 1100px) {
   .header {
     padding: 0 40px;
-    min-height: 76px;
   }
 
   .header__logo img {
-    height: 48px;
+    height: 46px;
   }
 
   .drawer,
   .drawer.is-open {
-    gap: 8px 20px;
-  }
-
-  .drawer a {
-    font-size: 14px;
+    gap: 8px 22px;
+    justify-content: center;
   }
 
   .shape-border svg {
@@ -1687,10 +1709,37 @@ button {
 }
 
 @media (min-width: 1280px) {
-  .header,
   .drawer,
   .drawer.is-open {
     flex-wrap: nowrap;
+    gap: 8px 16px;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 768px) {
+  .header {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo tools"
+      "nav nav";
+    padding: 12px 32px 0;
+    gap: 4px 16px;
+  }
+
+  .drawer,
+  .drawer.is-open {
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0 12px;
+    border-top: 1px solid #1c1c1c;
+  }
+
+  .drawer__call {
+    position: absolute;
+    top: 18px;
+    right: 124px;
+    margin-left: 0;
   }
 }
 
