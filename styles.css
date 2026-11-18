@@ -527,7 +527,8 @@ button {
   object-position: center 30%;
 }
 
-.slide img.slide__img--kids {
+.slide img.slide__img--kids,
+.slide img.slide__img--cycle {
   object-fit: cover;
   object-position: center center;
 }

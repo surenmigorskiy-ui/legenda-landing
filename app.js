@@ -82,6 +82,8 @@ const UZ = {
   "act.7": "Reabilitatsiya va tiklanish dasturlari",
   "act.8.alt": "Bolalar xonasi",
   "act.8": "Bolalar xonasi",
+  "act.11.alt": "Saykling",
+  "act.11": "Saykling",
   "act.9.alt": "Turk hammomi",
   "act.9": "Turk hammomi — nam bugʻxona",
   "act.10.alt": "Fin saunasi",
