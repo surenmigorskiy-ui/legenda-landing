@@ -207,17 +207,31 @@ button {
 
 .hero__media {
   position: relative;
-  min-height: 620px;
+  min-height: 678px;
   overflow: hidden;
 }
 
 .hero__media img {
   width: 100%;
-  height: 100%;
+  height: 620px;
   min-height: 620px;
   object-fit: cover;
-  /* Heads clear below logo+tagline with visible dark gap */
+  /* Heads clear below logo+tagline with visible dark gap. Height stays
+     fixed so a taller hero grows only below this frame. */
   object-position: center 28%;
+}
+
+/* Stretch only the bottom edge so the taller hero stays a photo, not a black band. */
+.hero__extend {
+  position: absolute;
+  top: 600px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  transform: scaleY(5);
+  transform-origin: center top;
+  background: url("assets/hero.webp") center bottom / auto 620px no-repeat;
+  pointer-events: none;
 }
 
 .hero__shade {
@@ -245,6 +259,10 @@ button {
 }
 
 .hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 58px;
   margin: 0 0 16px;
   font-family: var(--headline);
   font-size: 44px;
@@ -1140,6 +1158,10 @@ button {
     object-position: center 26%;
   }
 
+  .hero__extend {
+    display: none;
+  }
+
   .hero__shade {
     background:
       linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.04) 24%, rgba(0, 0, 0, 0.2) 62%, rgba(0, 0, 0, 0.7) 100%),
@@ -1154,6 +1176,8 @@ button {
   }
 
   .hero__title {
+    align-items: flex-start;
+    gap: 28px;
     max-width: 640px;
     font-size: clamp(56px, 6vw, 92px);
   }
