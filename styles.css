@@ -246,8 +246,8 @@ button {
 
 .hero__title {
   margin: 0 0 16px;
-  /* Slide both lines together so the original gap sits on the chest marks. */
-  transform: translateY(18px);
+  /* Both lines move together; the original gap crosses the chest marks. */
+  transform: translateY(24px);
   font-family: var(--headline);
   font-size: 44px;
   font-weight: 800;
