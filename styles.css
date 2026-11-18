@@ -528,23 +528,26 @@ button {
 }
 
 .slide img.slide__img--func {
-  object-position: 36% 72%;
+  object-position: center 100%;
 }
 
 .slide img.slide__img--recover {
-  object-position: center 55%;
+  object-position: center 100%;
 }
 
 .slide img.slide__img--kids {
-  object-position: center 70%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .slide img.slide__img--hammam {
-  object-position: 48% 38%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .slide img.slide__img--sauna {
-  object-position: center 42%;
+  object-fit: cover;
+  object-position: center center;
 }
 
 .slide__bar {
