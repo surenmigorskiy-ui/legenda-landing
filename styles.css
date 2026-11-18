@@ -528,7 +528,8 @@ button {
 }
 
 .slide img.slide__img--func {
-  object-position: center 100%;
+  /* Shifted up so the man's head stays fully in frame */
+  object-position: center 78%;
 }
 
 .slide img.slide__img--recover {

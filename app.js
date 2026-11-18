@@ -78,7 +78,7 @@ const UZ = {
   "act.5.alt": "Step va aerobika",
   "act.5": "Step, aerobika va raqs yoʻnalishlari",
   "act.6.alt": "Funksional trening",
-  "act.6": "Funksional trening, Bootcamp va boshqalar",
+  "act.6": "Funksional trening",
   "act.7.alt": "Tiklanish dasturlari",
   "act.7": "Reabilitatsiya va tiklanish dasturlari",
   "act.8.alt": "Bolalar xonasi",
