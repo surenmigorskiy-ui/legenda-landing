@@ -277,7 +277,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 const phoneMotion = window.matchMedia("(max-width: 767px)").matches;
 
 if (!reduceMotion && "IntersectionObserver" in window) {
-  const STAGGER = phoneMotion ? 0.14 : 0.2;
+  const STAGGER = phoneMotion ? 0.14 : 0.08;
 
   function arm(section, selectors) {
     let i = 0;
@@ -291,6 +291,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
   }
 
   const desktopSections = [
+    [".hero", [".hero__title", ".hero__lead", ".hero__cta .btn"]],
     [".why", [".why-cell"]],
     [".activities", [".section-title", ".section-sub", ".slide"]],
     [".recovery", [".section-title", ".zone"]],
@@ -341,7 +342,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
   /* Offset is painted first. The transition turns on a frame later, then the block is watched. */
   requestAnimationFrame(() => {
     document.documentElement.classList.add("motion-on");
-    if (phoneMotion) document.documentElement.classList.add("motion-ready");
+    document.documentElement.classList.add("motion-ready");
     requestAnimationFrame(() => {
       nodes.forEach(watch);
     });
