@@ -43,7 +43,7 @@ const UZ = {
   "nav.contact": "Kontaktlar",
   "nav.call": "Qoʻngʻiroq qilish: +998 78 555 75 55",
   "hero.alt": "Legenda®dagi mashgʻulotlar",
-  "hero.title": "<span class=\"hero__line\">Oʻzingni</span><span class=\"hero__line\">oʻzing <span class=\"accent\">qil</span></span>",
+  "hero.title": "Oʻzingni<br />oʻzing <span class=\"accent\">qil</span>",
   "hero.lead":
     "Legenda<span class=\"tm\">®</span> Fitness Maxtumquli — bu siz qoʻllab-quvvatlashni, motivatsiyani va oʻzingizning yaxshiroq versiyangiz sari yoʻlni topadigan joy",
   "cta.try": "Bepul sinab koʻrish",
