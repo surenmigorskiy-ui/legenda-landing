@@ -158,6 +158,58 @@ function rememberAttr(el, name) {
   return stored.get(name);
 }
 
+const COUNT_FIGURES = [
+  { key: "why.l1", to: 1700 },
+  { key: "why.l2", to: 17 },
+  { key: "why.l5", to: 100000 },
+];
+
+let countPhase = "hold";
+
+function figuresStayPut() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    || !("IntersectionObserver" in window);
+}
+
+function groupedFigure(n) {
+  return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
+}
+
+function figureText(key, value) {
+  const uz = document.documentElement.lang === "uz";
+  if (key === "why.l1") return groupedFigure(value) + "\u00A0" + (uz ? "m²" : "м²");
+  if (key === "why.l2") return value + (uz ? " klub" : " клубов");
+  return groupedFigure(value) + "+";
+}
+
+function writeFigures(valueFor) {
+  COUNT_FIGURES.forEach((item) => {
+    const el = document.querySelector('[data-i18n="' + item.key + '"]');
+    if (!el) return;
+    el.textContent = figureText(item.key, valueFor(item));
+  });
+}
+
+function paintCounts() {
+  if (figuresStayPut() || countPhase === "run") return;
+  writeFigures(countPhase === "done" ? (item) => item.to : () => 0);
+}
+
+function startCounts() {
+  if (countPhase !== "hold" || figuresStayPut()) return;
+  countPhase = "run";
+  const t0 = performance.now();
+  const dur = 1100;
+  function frame(now) {
+    const t = Math.min(1, (now - t0) / dur);
+    const eased = 1 - Math.pow(1 - t, 3);
+    writeFigures((item) => Math.round(item.to * eased));
+    if (t < 1) requestAnimationFrame(frame);
+    else countPhase = "done";
+  }
+  requestAnimationFrame(frame);
+}
+
 function applyLang(lang) {
   const uz = lang === "uz";
   document.documentElement.lang = uz ? "uz" : "ru";
@@ -198,6 +250,8 @@ function applyLang(lang) {
     btn.setAttribute("aria-pressed", on ? "true" : "false");
   });
 
+  paintCounts();
+
   try {
     localStorage.setItem(LANG_KEY, uz ? "uz" : "ru");
   } catch (err) {
@@ -223,7 +277,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 const phoneMotion = window.matchMedia("(max-width: 767px)").matches;
 
 if (!reduceMotion && "IntersectionObserver" in window) {
-  const STAGGER = phoneMotion ? 0.08 : 0.2;
+  const STAGGER = phoneMotion ? 0.12 : 0.2;
 
   function arm(section, selectors) {
     let i = 0;
@@ -278,6 +332,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-in");
+        if (entry.target.classList.contains("why")) startCounts();
         io.unobserve(entry.target);
       });
     }, options);
