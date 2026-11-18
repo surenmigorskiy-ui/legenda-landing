@@ -53,7 +53,7 @@ const UZ = {
   "cta.tour": "Ekskursiyaga yozilish",
   "why.title": "Nega<br /><em>tanlashadi</em><br />Legenda<span class=\"tm\">®</span>",
   "why.lead": "Qulaylik, servis va har biriga eʼtibor",
-  "why.l1": "1 700 m²",
+  "why.l1": "1\u00A0700\u00A0m²",
   "why.d1": "Butun klub ikki qavatda",
   "why.l2": "10–11",
   "why.d2": "Toshkent manzarasi",

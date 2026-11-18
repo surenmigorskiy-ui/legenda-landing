@@ -68,21 +68,23 @@ button {
   transform: translateX(-50%);
   width: 100%;
   max-width: var(--max);
-  height: 152px;
+  /* Tall overlay so the fade can finish soft — no hard strip edge */
+  height: min(42vh, 300px);
+  min-height: 220px;
   z-index: 100;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 12px 72px 14px;
-  /* Soft long fade like Chekhov: dark enough for slogan, then open air */
+  padding: 12px 12px 0 14px;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.42) 16%,
-    rgba(0, 0, 0, 0.22) 36%,
-    rgba(0, 0, 0, 0.12) 58%,
-    rgba(0, 0, 0, 0.07) 100%
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.62) 14%,
+    rgba(0, 0, 0, 0.36) 32%,
+    rgba(0, 0, 0, 0.16) 52%,
+    rgba(0, 0, 0, 0.06) 74%,
+    rgba(0, 0, 0, 0) 100%
   );
   backdrop-filter: none;
   pointer-events: none;
@@ -407,8 +409,8 @@ button {
 .why__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 28px;
-  row-gap: 56px;
+  column-gap: 20px;
+  row-gap: 52px;
   align-items: start;
 }
 
@@ -424,18 +426,19 @@ button {
 .why-cell__label {
   margin: 0 0 10px;
   font-family: var(--body);
-  font-size: 44px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   text-transform: none;
+  white-space: nowrap;
   color: #fff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
 }
 
 .why-cell__line {
   margin: 0;
-  max-width: 10.5em;
+  max-width: 11em;
   font-family: var(--body);
   font-size: 14px;
   font-weight: 400;
@@ -1002,18 +1005,19 @@ button {
     transform: none;
     width: 100%;
     max-width: none;
-    height: auto;
-    min-height: 160px;
-    padding: 14px 40px 78px;
+    height: min(36vh, 280px);
+    min-height: 200px;
+    padding: 16px 40px 0;
     gap: 12px 28px;
     align-items: flex-start;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.4) 18%,
-      rgba(0, 0, 0, 0.2) 40%,
-      rgba(0, 0, 0, 0.1) 64%,
-      rgba(0, 0, 0, 0.06) 100%
+      rgba(0, 0, 0, 0.86) 0%,
+      rgba(0, 0, 0, 0.58) 16%,
+      rgba(0, 0, 0, 0.3) 36%,
+      rgba(0, 0, 0, 0.12) 58%,
+      rgba(0, 0, 0, 0.04) 78%,
+      rgba(0, 0, 0, 0) 100%
     );
   }
 
@@ -1174,8 +1178,9 @@ button {
   }
 
   .why-cell__label {
-    font-size: clamp(52px, 4.8vw, 68px);
+    font-size: clamp(48px, 4.6vw, 64px);
     margin-bottom: 14px;
+    white-space: nowrap;
   }
 
   .why-cell__line {
