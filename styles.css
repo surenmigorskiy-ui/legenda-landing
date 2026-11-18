@@ -532,8 +532,8 @@ button {
 }
 
 .slide img.slide__img--recover {
-  /* Raised so the female trainer's head stays fully in frame */
-  object-position: center 45%;
+  /* Raised further so the standing trainer's full head clears the top edge */
+  object-position: center 30%;
 }
 
 .slide img.slide__img--kids {
