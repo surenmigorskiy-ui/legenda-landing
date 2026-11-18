@@ -199,10 +199,10 @@ function startCounts() {
   if (countPhase !== "hold" || figuresStayPut()) return;
   countPhase = "run";
   const t0 = performance.now();
-  const dur = 1100;
+  const dur = 1600;
   function frame(now) {
     const t = Math.min(1, (now - t0) / dur);
-    const eased = 1 - Math.pow(1 - t, 3);
+    const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
     writeFigures((item) => Math.round(item.to * eased));
     if (t < 1) requestAnimationFrame(frame);
     else countPhase = "done";
@@ -277,7 +277,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 const phoneMotion = window.matchMedia("(max-width: 767px)").matches;
 
 if (!reduceMotion && "IntersectionObserver" in window) {
-  const STAGGER = phoneMotion ? 0.12 : 0.2;
+  const STAGGER = phoneMotion ? 0.14 : 0.2;
 
   function arm(section, selectors) {
     let i = 0;
@@ -309,7 +309,6 @@ if (!reduceMotion && "IntersectionObserver" in window) {
     [".help", [".help__title", ".help__sub", ".mini-card", ".help .cta-stack .btn"]],
     [".promos", [".promo-heading", ".promo-card"]],
     [".about", [".about__eyebrow", ".about__cta-title", ".about__cta-lead", ".about .cta-stack .btn"]],
-    [".footer", [".footer__title", ".footer__addr", ".footer__link", ".footer__hours", ".footer__map-link", ".footer__social", ".footer__copy"]],
   ];
 
   const nodes = [];

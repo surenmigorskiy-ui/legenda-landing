@@ -1602,11 +1602,11 @@ button {
     }
 
     .m {
-      transform: translateY(28px);
+      transform: translateY(48px);
     }
 
     .motion-ready .m {
-      transition: transform 0.9s ease-out;
+      transition: transform 1s ease-out;
       transition-delay: var(--m-delay, 0s);
     }
 
@@ -1615,15 +1615,15 @@ button {
     }
 
     .mini-card:nth-child(1).m {
-      transform: translateY(28px) rotate(-8deg);
+      transform: translateY(48px) rotate(-8deg);
     }
 
     .mini-card:nth-child(2).m {
-      transform: translateY(28px) rotate(2deg);
+      transform: translateY(48px) rotate(2deg);
     }
 
     .mini-card:nth-child(3).m {
-      transform: translateY(28px) rotate(8deg);
+      transform: translateY(48px) rotate(8deg);
     }
 
     .motion-ready .is-in .mini-card:nth-child(1).m {
