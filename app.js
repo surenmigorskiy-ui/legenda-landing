@@ -51,14 +51,14 @@ const UZ = {
   "cta.write": "Telegramga yozish",
   "cta.signup": "Telegramda yozilish",
   "cta.tour": "Ekskursiyaga yozilish",
-  "why.title": "Nega <em>tanlashadi</em> Legenda<span class=\"tm\">®</span>",
-  "why.s1": "Har bir mehmonning natijasi va qulayligiga eʼtibor",
-  "why.hours": "17 soat",
-  "why.s2": "qulay jadval — erta tongdan kechki paytgacha",
-  "why.s3": "mamnun mijozlar",
-  "why.s4": "professional trenerlar va instruktorlar",
-  "why.s5": "guruh dasturlari: yoga, pilates, saykling va boshqalar",
-  "why.eq": "Zamonaviy trenajyor uskunalari:",
+  "why.title": "Nega tanlashadi Legenda<span class=\"tm\">®</span>",
+  "why.lead": "Qulaylik, servis va har biriga eʼtibor",
+  "why.p1": "Zal tozaligi va holati saqlanadigan makon.",
+  "why.p2": "Matrix Premium uskunalari.",
+  "why.p3":
+    "Biznes-segment mijozlarini olib boradigan va malakasini muntazam oshiradigan trenerlar jamoasi.",
+  "why.p4":
+    "Soni emas, olib borish sifati boʻyicha yigʻilgan guruh dasturlari.",
   "act.title": "Yoʻnalishlar va faoliyatlar",
   "act.sub": "Legenda<span class=\"tm\">®</span> fitnes-klubi — bu:",
   "act.1.alt": "Legenda®da guruh mashgʻulotlari",
@@ -227,7 +227,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
   }
 
   const sections = [
-    [".why", [".stat"]],
+    [".why", [".why__lead", ".why-point"]],
     [".activities", [".section-title", ".section-sub", ".slide"]],
     [".plans", [".section-title", ".plan", ".plans__shared"]],
     [".help", [".help__title", ".help__sub", ".mini-card", ".cta-stack"]],
