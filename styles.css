@@ -523,8 +523,8 @@ button {
 }
 
 .slide img.slide__img--recover {
-  /* Raised further so the standing trainer's full head clears the top edge */
-  object-position: center 30%;
+  /* Frame starts at the marked line: less ceiling, client on the floor in view */
+  object-position: center top;
 }
 
 .slide img.slide__img--kids,
