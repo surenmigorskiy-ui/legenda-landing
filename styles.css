@@ -215,8 +215,8 @@ button {
   height: 100%;
   min-height: 620px;
   object-fit: cover;
-  /* Rebaked with ~13% more headroom; bias up so head stays in frame */
-  object-position: center 26%;
+  /* Cropped to the mark under the header; full head kept */
+  object-position: center 38%;
 }
 
 .hero__shade {
@@ -532,8 +532,8 @@ button {
 }
 
 .slide img.slide__img--recover {
-  /* Shifted up ~20% from bottom so trainer head stays in frame */
-  object-position: center 80%;
+  /* Raised so the female trainer's head stays fully in frame */
+  object-position: center 45%;
 }
 
 .slide img.slide__img--kids {
@@ -566,6 +566,12 @@ button {
   padding-right: 8px;
   font-size: 15px;
   line-height: 1.35;
+}
+
+.zone p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .recovery {
@@ -1139,7 +1145,7 @@ button {
     height: 100%;
     min-height: 0;
     object-fit: cover;
-    object-position: center 22%;
+    object-position: center 36%;
   }
 
   .hero__shade {
