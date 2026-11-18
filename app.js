@@ -53,12 +53,14 @@ const UZ = {
   "cta.tour": "Ekskursiyaga yozilish",
   "why.title": "Nega tanlashadi Legenda<span class=\"tm\">®</span>",
   "why.lead": "Qulaylik, servis va har biriga eʼtibor",
-  "why.p1": "Zal tozaligi va holati saqlanadigan makon.",
-  "why.p2": "Matrix Premium uskunalari.",
-  "why.p3":
-    "Biznes-segment mijozlarini olib boradigan va malakasini muntazam oshiradigan trenerlar jamoasi.",
-  "why.p4":
-    "Soni emas, olib borish sifati boʻyicha yigʻilgan guruh dasturlari.",
+  "why.l1": "1 700 m²",
+  "why.d1": "Butun klub 10–11-qavatda, Toshkent manzarasi",
+  "why.l2": "Havo",
+  "why.d2": "Qimmat tozalash: kirish va chiqish",
+  "why.l3": "Matrix",
+  "why.d3": "Faqat Premium, klub hamkori",
+  "why.l4": "Trener",
+  "why.d4": "Biznes-segment, oʻqitish, har biriga reja",
   "act.title": "Yoʻnalishlar va faoliyatlar",
   "act.sub": "Legenda<span class=\"tm\">®</span> fitnes-klubi — bu:",
   "act.1.alt": "Legenda®da guruh mashgʻulotlari",
@@ -227,7 +229,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
   }
 
   const sections = [
-    [".why", [".why__lead", ".why-point"]],
+    [".why", [".why__lead", ".why-cell"]],
     [".activities", [".section-title", ".section-sub", ".slide"]],
     [".plans", [".section-title", ".plan", ".plans__shared"]],
     [".help", [".help__title", ".help__sub", ".mini-card", ".cta-stack"]],
