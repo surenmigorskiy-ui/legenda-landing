@@ -51,7 +51,7 @@ const UZ = {
   "cta.write": "Telegramga yozish",
   "cta.signup": "Telegramda yozilish",
   "cta.tour": "Ekskursiyaga yozilish",
-  "why.title": "Nega tanlashadi Legenda<span class=\"tm\">®</span>",
+  "why.title": "Nega<br /><em>tanlashadi</em><br />Legenda<span class=\"tm\">®</span>",
   "why.lead": "Qulaylik, servis va har biriga eʼtibor",
   "why.l1": "1 700 m²",
   "why.d1": "Butun klub ikki qavatda",
