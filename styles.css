@@ -68,21 +68,21 @@ button {
   transform: translateX(-50%);
   width: 100%;
   max-width: var(--max);
-  height: 132px;
+  height: 152px;
   z-index: 100;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  padding: 12px 12px 56px 14px;
-  /* Soft long fade: dark for logo/slogan, then airy clear — never a hard bar */
+  padding: 10px 12px 72px 14px;
+  /* Soft long fade like Chekhov: dark enough for slogan, then open air */
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.86) 0%,
-    rgba(0, 0, 0, 0.58) 22%,
-    rgba(0, 0, 0, 0.32) 48%,
-    rgba(0, 0, 0, 0.16) 72%,
-    rgba(0, 0, 0, 0.1) 100%
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.42) 16%,
+    rgba(0, 0, 0, 0.22) 36%,
+    rgba(0, 0, 0, 0.12) 58%,
+    rgba(0, 0, 0, 0.07) 100%
   );
   backdrop-filter: none;
   pointer-events: none;
@@ -407,8 +407,8 @@ button {
 .why__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 24px;
-  row-gap: 52px;
+  column-gap: 28px;
+  row-gap: 56px;
   align-items: start;
 }
 
@@ -424,10 +424,10 @@ button {
 .why-cell__label {
   margin: 0 0 10px;
   font-family: var(--body);
-  font-size: 52px;
+  font-size: 44px;
   font-weight: 700;
-  line-height: 0.98;
-  letter-spacing: -0.01em;
+  line-height: 1;
+  letter-spacing: -0.02em;
   text-transform: none;
   color: #fff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
@@ -435,9 +435,9 @@ button {
 
 .why-cell__line {
   margin: 0;
-  max-width: 11em;
+  max-width: 10.5em;
   font-family: var(--body);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.35;
   color: #fff;
@@ -1003,17 +1003,17 @@ button {
     width: 100%;
     max-width: none;
     height: auto;
-    min-height: 140px;
-    padding: 16px 40px 64px;
+    min-height: 160px;
+    padding: 14px 40px 78px;
     gap: 12px 28px;
     align-items: flex-start;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.84) 0%,
-      rgba(0, 0, 0, 0.52) 24%,
-      rgba(0, 0, 0, 0.28) 52%,
-      rgba(0, 0, 0, 0.14) 78%,
-      rgba(0, 0, 0, 0.09) 100%
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.4) 18%,
+      rgba(0, 0, 0, 0.2) 40%,
+      rgba(0, 0, 0, 0.1) 64%,
+      rgba(0, 0, 0, 0.06) 100%
     );
   }
 
@@ -1174,12 +1174,12 @@ button {
   }
 
   .why-cell__label {
-    font-size: clamp(58px, 5.2vw, 76px);
+    font-size: clamp(52px, 4.8vw, 68px);
     margin-bottom: 14px;
   }
 
   .why-cell__line {
-    font-size: 17px;
+    font-size: 16px;
     max-width: 14em;
   }
 
