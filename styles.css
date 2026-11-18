@@ -509,15 +509,18 @@ button {
 }
 
 .slide img.slide__img--boxing {
-  object-position: center 88%;
+  object-position: 38% 100%;
 }
 
 .slide img.slide__img--personal {
-  object-position: center 42%;
+  /* Source is portrait; contain = max zoom-out in the 3:2 slot. Y = 42% + 35%. */
+  object-fit: contain;
+  object-position: center 77%;
+  background: #0a0a0a;
 }
 
 .slide img.slide__img--strength {
-  object-position: center 52%;
+  object-position: center 100%;
 }
 
 .slide img.slide__img--step {
