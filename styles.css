@@ -1582,15 +1582,57 @@ button {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  /* Small motion set: transform only, ease-out, JS-set --m-delay */
-  .motion-on .m {
-    transform: translateY(16px);
-    transition: transform 1s ease-out;
-    transition-delay: var(--m-delay, 0s);
+  /* Desktop entrance: unchanged */
+  @media (min-width: 768px) {
+    .motion-on .m {
+      transform: translateY(16px);
+      transition: transform 1s ease-out;
+      transition-delay: var(--m-delay, 0s);
+    }
+
+    .motion-on .is-in .m {
+      transform: translateY(0);
+    }
   }
 
-  .motion-on .is-in .m {
-    transform: translateY(0);
+  /* Phone: short slide, no opacity. Offset is set before the transition so it does not pop. */
+  @media (max-width: 767px) {
+    .m {
+      transform: translateY(12px);
+    }
+
+    .motion-ready .m {
+      transition: transform 0.7s ease-out;
+      transition-delay: var(--m-delay, 0s);
+    }
+
+    .motion-ready .is-in .m {
+      transform: translateY(0);
+    }
+
+    .mini-card:nth-child(1).m {
+      transform: translateY(12px) rotate(-8deg);
+    }
+
+    .mini-card:nth-child(2).m {
+      transform: translateY(12px) rotate(2deg);
+    }
+
+    .mini-card:nth-child(3).m {
+      transform: translateY(12px) rotate(8deg);
+    }
+
+    .motion-ready .is-in .mini-card:nth-child(1).m {
+      transform: rotate(-8deg);
+    }
+
+    .motion-ready .is-in .mini-card:nth-child(2).m {
+      transform: rotate(2deg);
+    }
+
+    .motion-ready .is-in .mini-card:nth-child(3).m {
+      transform: rotate(8deg);
+    }
   }
 
   .hero__chevron {

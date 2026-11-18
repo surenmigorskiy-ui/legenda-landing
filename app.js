@@ -220,9 +220,10 @@ try {
 applyLang(initialLang);
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const phoneMotion = window.matchMedia("(max-width: 767px)").matches;
 
 if (!reduceMotion && "IntersectionObserver" in window) {
-  const STAGGER = 0.2;
+  const STAGGER = phoneMotion ? 0.08 : 0.2;
 
   function arm(section, selectors) {
     let i = 0;
@@ -235,7 +236,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
     });
   }
 
-  const sections = [
+  const desktopSections = [
     [".why", [".why-cell"]],
     [".activities", [".section-title", ".section-sub", ".slide"]],
     [".recovery", [".section-title", ".zone"]],
@@ -245,30 +246,50 @@ if (!reduceMotion && "IntersectionObserver" in window) {
     [".about", [".about__eyebrow", ".about__cta-title", ".about__cta-lead", ".cta-stack"]],
   ];
 
+  const phoneSections = [
+    [".hero", [".hero__title", ".hero__lead", ".hero__cta .btn"]],
+    [".why", [".why-cell"]],
+    [".activities", [".section-title", ".section-sub", ".slide"]],
+    [".recovery", [".section-title", ".zone"]],
+    [".plans", [".section-title", ".plan", ".plans__shared"]],
+    [".help", [".help__title", ".help__sub", ".mini-card", ".help .cta-stack .btn"]],
+    [".promos", [".promo-heading", ".promo-card"]],
+    [".about", [".about__eyebrow", ".about__cta-title", ".about__cta-lead", ".about .cta-stack .btn"]],
+    [".footer", [".footer__title", ".footer__addr", ".footer__link", ".footer__hours", ".footer__map-link", ".footer__social", ".footer__copy"]],
+  ];
+
   const nodes = [];
-  sections.forEach(([secSel, childSels]) => {
+  (phoneMotion ? phoneSections : desktopSections).forEach(([secSel, childSels]) => {
     const section = document.querySelector(secSel);
     if (!section) return;
     arm(section, childSels);
     nodes.push(section);
   });
 
-  const io = new IntersectionObserver(
-    (entries) => {
+  function watch(node) {
+    const vh = window.innerHeight || 800;
+    const tall = node.getBoundingClientRect().height > vh * 0.9;
+    const options = phoneMotion
+      ? tall
+        ? { threshold: 0, rootMargin: "0px 0px -40% 0px" }
+        : { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+      : { threshold: 0.2, rootMargin: "0px 0px -10% 0px" };
+    const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-in");
         io.unobserve(entry.target);
       });
-    },
-    { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
-  );
+    }, options);
+    io.observe(node);
+  }
 
-  // Arm first, then enable CSS offsets, then observe (avoids a snap-flash).
+  /* Offset is painted first. The transition turns on a frame later, then the block is watched. */
   requestAnimationFrame(() => {
     document.documentElement.classList.add("motion-on");
+    if (phoneMotion) document.documentElement.classList.add("motion-ready");
     requestAnimationFrame(() => {
-      nodes.forEach((node) => io.observe(node));
+      nodes.forEach(watch);
     });
   });
 }
