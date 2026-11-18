@@ -108,7 +108,8 @@ const UZ = {
   "help.sub":
     "Qulay tashrif vaqtiga qarab tanlang — qolgani bir xil. Telegramga yozing yoki qoʻngʻiroq qiling",
   "promo.title": "Boshlang<br />eng <span class=\"accent\">yaxshi</span><br />shartlarda",
-  "promo.site": "Saytimiz mehmonlari uchun hammaga −10%",
+  "promo.site": "Saytimiz mehmonlari uchun barcha kartalarga",
+  "promo.benefit": "foyda",
   "promo.try": "Bepul sinab koʻring",
   "promo.gift1": "Birinchi mashgʻulot — sovgʻa",
   "promo.duo": "Juft klub kartalariga maxsus taklif",

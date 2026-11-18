@@ -831,20 +831,26 @@ button {
 
 .promo-card__tag {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 72px;
-  height: 72px;
+  top: 16px;
+  right: 16px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
   background: var(--red);
   display: grid;
   place-items: center;
+  padding: 8px;
+  box-sizing: border-box;
   font-family: var(--headline);
   font-weight: 800;
-  font-size: 13px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   text-align: center;
-  line-height: 1.1;
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.25);
+  line-height: 1.05;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
 }
 
 .promo-card__text {
@@ -860,8 +866,10 @@ button {
 .promo-card__text strong {
   font-family: var(--headline);
   font-size: 20px;
+  font-weight: 800;
   text-transform: uppercase;
   line-height: 1.15;
+  letter-spacing: 0.02em;
 }
 
 .promo-card__text span {
@@ -870,7 +878,11 @@ button {
 }
 
 .promo-card--site .promo-card__text {
-  right: 96px;
+  right: 104px;
+}
+
+.promo-card--site .promo-card__text span {
+  display: none;
 }
 
 .about {
