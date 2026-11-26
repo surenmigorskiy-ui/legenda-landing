@@ -109,10 +109,9 @@ const UZ = {
   "help.sub":
     "Qulay tashrif vaqtiga qarab tanlang — qolgani bir xil. Telegramga yozing yoki qoʻngʻiroq qiling",
   "promo.title": "Boshlang<br />eng <span class=\"accent\">yaxshi</span><br />shartlarda",
-  "promo.bf.kicker": "🔥 BLACK FRIDAY LEGENDAda!",
-  "promo.bf.lead": "27-noyabrgacha — yillik cheksiz kartalarga 25% foyda",
-  "promo.bf.limit": "⚠️ Atigi 10 ta klub kartasi",
-  "promo.bf.date": "📅 27-noyabrgacha",
+  "promo.bf.line": "yillik cheksiz kartalar",
+  "promo.bf.hours": "soat",
+  "promo.bf.minutes": "daq",
   "promo.site": "Saytimiz mehmonlari uchun barcha kartalarga",
   "promo.benefit": "foydalar",
   "promo.try": "Bepul sinab koʻring",
@@ -264,6 +263,7 @@ function applyLang(lang) {
   });
 
   paintCounts();
+  if (typeof paintBlackFriday === "function") paintBlackFriday();
 
   try {
     localStorage.setItem(LANG_KEY, uz ? "uz" : "ru");
@@ -288,9 +288,46 @@ applyLang(initialLang);
 
 var bfTimer = 0;
 
-function syncBlackFriday() {
+function bfLeftMs() {
   var end = Date.parse(document.documentElement.getAttribute("data-bf-end") || "");
-  var on = Number.isFinite(end) && Date.now() < end;
+  if (!Number.isFinite(end)) return -1;
+  return end - Date.now();
+}
+
+function setBfNumber(el, next) {
+  if (!el) return;
+  var prev = el.textContent;
+  if (prev === next) return;
+  el.textContent = next;
+  if (!prev || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  el.classList.remove("is-tick");
+  void el.offsetWidth;
+  el.classList.add("is-tick");
+}
+
+function paintBlackFriday() {
+  var left = bfLeftMs();
+  if (left <= 0) return;
+  var totalMin = Math.ceil(left / 60000);
+  var hours = Math.floor(totalMin / 60);
+  var minutes = totalMin % 60;
+  setBfNumber(document.querySelector("[data-bf-hours]"), String(hours));
+  setBfNumber(
+    document.querySelector("[data-bf-minutes]"),
+    minutes < 10 ? "0" + minutes : String(minutes)
+  );
+  var timer = document.querySelector("[data-bf-timer]");
+  if (!timer) return;
+  var uz = document.documentElement.lang === "uz";
+  timer.setAttribute(
+    "aria-label",
+    hours + (uz ? " soat " : " ч ") + (minutes < 10 ? "0" + minutes : String(minutes)) + (uz ? " daqiqa" : " мин")
+  );
+}
+
+function syncBlackFriday() {
+  var left = bfLeftMs();
+  var on = left > 0;
   document.documentElement.classList.toggle("bf-on", on);
   document.documentElement.classList.toggle("bf-off", !on);
   if (bfTimer) {
@@ -298,8 +335,8 @@ function syncBlackFriday() {
     bfTimer = 0;
   }
   if (!on) return;
-  var wait = Math.max(0, end - Date.now());
-  bfTimer = window.setTimeout(syncBlackFriday, Math.min(wait, 2147483647));
+  paintBlackFriday();
+  bfTimer = window.setTimeout(syncBlackFriday, 1000);
 }
 
 syncBlackFriday();
