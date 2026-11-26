@@ -348,3 +348,22 @@ if (!reduceMotion && "IntersectionObserver" in window) {
     });
   });
 }
+
+/* No form submit to observe. Lead is the Telegram signup click. Phone clicks are Contact. */
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href]");
+  if (!link || typeof fbq !== "function") return;
+  const href = link.getAttribute("href") || "";
+  if (href.indexOf("tel:") === 0) {
+    fbq("track", "Contact");
+    return;
+  }
+  const key = link.getAttribute("data-i18n") || "";
+  if (key === "cta.try" || key === "cta.signup" || key === "cta.write" || key === "cta.tour" || link.classList.contains("promo-card")) {
+    fbq("track", "Lead");
+    return;
+  }
+  if (href.indexOf("t.me/legendafitness") !== -1 || href.indexOf("t.me/legendafitnesstashkent") !== -1) {
+    fbq("track", "Contact");
+  }
+});
