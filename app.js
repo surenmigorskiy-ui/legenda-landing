@@ -110,12 +110,9 @@ const UZ = {
     "Qulay tashrif vaqtiga qarab tanlang — qolgani bir xil. Telegramga yozing yoki qoʻngʻiroq qiling",
   "promo.title": "Boshlang<br />eng <span class=\"accent\">yaxshi</span><br />shartlarda",
   "promo.bf.kicker": "🔥 BLACK FRIDAY LEGENDAda!",
-  "promo.bf.lead": "Faqat 27-noyabrgacha — yillik cheksiz klub kartalariga 25% foyda!",
-  "promo.bf.body":
-    "Butun yil mashgʻulot, klubga erkin tashrif va uning barcha imkoniyatlariga kirish — maxsus shartlarda.",
-  "promo.bf.limit": "⚠️ Taklif cheklangan: atigi 10 ta klub kartasi mavjud.",
-  "promo.bf.date":
-    "📅 27-noyabr. Kartani 25% foyda bilan rasmiylashtirish imkoniyatini qoʻldan boy bermang!",
+  "promo.bf.lead": "27-noyabrgacha — yillik cheksiz kartalarga 25% foyda",
+  "promo.bf.limit": "⚠️ Atigi 10 ta klub kartasi",
+  "promo.bf.date": "📅 27-noyabrgacha",
   "promo.site": "Saytimiz mehmonlari uchun barcha kartalarga",
   "promo.benefit": "foydalar",
   "promo.try": "Bepul sinab koʻring",
