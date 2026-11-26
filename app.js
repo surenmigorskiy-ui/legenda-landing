@@ -109,6 +109,13 @@ const UZ = {
   "help.sub":
     "Qulay tashrif vaqtiga qarab tanlang — qolgani bir xil. Telegramga yozing yoki qoʻngʻiroq qiling",
   "promo.title": "Boshlang<br />eng <span class=\"accent\">yaxshi</span><br />shartlarda",
+  "promo.bf.kicker": "🔥 BLACK FRIDAY LEGENDAda!",
+  "promo.bf.lead": "Faqat 27-noyabrgacha — yillik cheksiz klub kartalariga 25% foyda!",
+  "promo.bf.body":
+    "Butun yil mashgʻulot, klubga erkin tashrif va uning barcha imkoniyatlariga kirish — maxsus shartlarda.",
+  "promo.bf.limit": "⚠️ Taklif cheklangan: atigi 10 ta klub kartasi mavjud.",
+  "promo.bf.date":
+    "📅 27-noyabr. Kartani 25% foyda bilan rasmiylashtirish imkoniyatini qoʻldan boy bermang!",
   "promo.site": "Saytimiz mehmonlari uchun barcha kartalarga",
   "promo.benefit": "foydalar",
   "promo.try": "Bepul sinab koʻring",
@@ -282,6 +289,26 @@ try {
 }
 applyLang(initialLang);
 
+var bfTimer = 0;
+
+function syncBlackFriday() {
+  var end = Date.parse(document.documentElement.getAttribute("data-bf-end") || "");
+  var on = Number.isFinite(end) && Date.now() < end;
+  document.documentElement.classList.toggle("bf-on", on);
+  document.documentElement.classList.toggle("bf-off", !on);
+  if (bfTimer) {
+    window.clearTimeout(bfTimer);
+    bfTimer = 0;
+  }
+  if (!on) return;
+  var wait = Math.max(0, end - Date.now());
+  bfTimer = window.setTimeout(syncBlackFriday, Math.min(wait, 2147483647));
+}
+
+syncBlackFriday();
+document.addEventListener("visibilitychange", syncBlackFriday);
+window.addEventListener("pageshow", syncBlackFriday);
+
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const phoneMotion = window.matchMedia("(max-width: 767px)").matches;
 
@@ -306,7 +333,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
     [".recovery", [".section-title", ".zone"]],
     [".plans", [".section-title", ".plan", ".plans__shared"]],
     [".help", [".help__title", ".help__sub", ".mini-card", ".cta-stack"]],
-    [".promos", [".promo-heading", ".promo-card"]],
+    [".promos", [".promo-heading", ".promo-bf", ".promo-card"]],
     [".about", [".about__eyebrow", ".about__cta-title", ".about__cta-lead", ".cta-stack"]],
   ];
 
@@ -317,7 +344,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
     [".recovery", [".section-title", ".zone"]],
     [".plans", [".section-title", ".plan", ".plans__shared"]],
     [".help", [".help__title", ".help__sub", ".mini-card", ".help .cta-stack .btn"]],
-    [".promos", [".promo-heading", ".promo-card"]],
+    [".promos", [".promo-heading", ".promo-bf", ".promo-card"]],
     [".about", [".about__eyebrow", ".about__cta-title", ".about__cta-lead", ".about .cta-stack .btn"]],
   ];
 
@@ -368,7 +395,7 @@ document.addEventListener("click", (event) => {
     return;
   }
   const key = link.getAttribute("data-i18n") || "";
-  if (key === "cta.try" || key === "cta.signup" || key === "cta.write" || key === "cta.tour" || link.classList.contains("promo-card")) {
+  if (key === "cta.try" || key === "cta.signup" || key === "cta.write" || key === "cta.tour" || link.classList.contains("promo-card") || link.classList.contains("promo-bf")) {
     fbq("track", "Lead");
     return;
   }
