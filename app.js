@@ -129,6 +129,10 @@ const UZ = {
 };
 
 const LANG_KEY = "legenda-lang";
+const TG_LEAD = {
+  ru: "https://t.me/m/x5t9qCeYZjdi",
+  uz: "https://t.me/m/z6p2iNn-OTgy",
+};
 const originalText = new WeakMap();
 const originalHtml = new WeakMap();
 const originalAttr = new WeakMap();
@@ -250,6 +254,11 @@ function applyLang(lang) {
     btn.setAttribute("aria-pressed", on ? "true" : "false");
   });
 
+  const leadHref = uz ? TG_LEAD.uz : TG_LEAD.ru;
+  document.querySelectorAll("[data-tg-lead]").forEach((el) => {
+    el.setAttribute("href", leadHref);
+  });
+
   paintCounts();
 
   try {
@@ -363,7 +372,7 @@ document.addEventListener("click", (event) => {
     fbq("track", "Lead");
     return;
   }
-  if (href.indexOf("t.me/legendafitness") !== -1 || href.indexOf("t.me/legendafitnesstashkent") !== -1) {
+  if (href.indexOf("t.me/m/x5t9qCeYZjdi") !== -1 || href.indexOf("t.me/m/z6p2iNn-OTgy") !== -1 || href.indexOf("t.me/legendafitnesstashkent") !== -1) {
     fbq("track", "Contact");
   }
 });
